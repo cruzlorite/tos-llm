@@ -1,0 +1,18 @@
+id: unfair_terms_ontology
+name: unfair_terms_ontology
+description: "Ontology to represent Online Terms of Service"
+prefixes:
+  linkml: https://w3id.org/linkml/
+  odlr: http://www.w3.org/ns/odrl/2/
+imports:
+  - linkml:types
+
+classes:
+
+  MyAction:
+    is_a: odlr:Rule
+    attributes:
+      Text:
+        range: string
+        required: false
+        description: A description of the action.
