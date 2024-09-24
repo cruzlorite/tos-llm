@@ -1,0 +1,8 @@
+You are an expert Ontology Engineer. Follow this steps carefully and you will receive a 5000$ bonus.
+Extract all the ActionTarget objects from the input term.
+An ActionTarget is a noun phrase that represents the target of an action.
+Include ONLY specific targets, not general ones.
+Assign the type correctly. Follow this guidelines:
+- USER_CONTENT: content, data or information somehow is related to the user.
+- SERVICE: a service that the user can access or use.
+- CONTRACT: the contract itself.

@@ -1,9 +1,9 @@
-id: unfair_terms_ontology
-name: unfair_terms_ontology
+id: https://w3id.org/linkml/
+name: UTDC
 description: "Deontic logic ontology for unfair terms in online terms of service"
 prefixes:
   linkml: https://w3id.org/linkml/
-  odlr: http://www.w3.org/ns/odrl/2/
+  odrl: http://www.w3.org/ns/odrl/2/
 imports:
   - linkml:types
 
@@ -200,23 +200,5 @@ classes:
         required: true
         description: "'PROVIDER' or 'CONSUMER'"
       action:
-        range: TerminateContract
+        range: Action
         required: true
-        # multiline text with qoutes
-        description: >-
-             TerminateContract:
-              is_a: Action
-              description: This class represents under what conditions the service provider can terminate the contract.
-              attributes:
-                unilaterally:
-                  range: boolean
-                  required: false
-                  description: "bool: can the service provider terminate the contract unilaterally?"
-                no_reason_required:
-                  range: boolean
-                  required: false
-                  description: "bool: can the service provider terminate the contract without giving a justified reason?"
-                prior_notice_required:
-                  range: boolean
-                  required: 
-                  description: "bool: does the service provider have to give prior notice before terminating the contract?"

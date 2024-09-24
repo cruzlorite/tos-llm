@@ -1,0 +1,153 @@
+http://www.w3.org/ns/odrl/2/ ! Open Digital Rights Language (ODRL) Ontology
+http://www.w3.org/ns/odrl/2/odrl.ttl ! ODRL 2.0 (Turtle)
+http://www.w3.org/ns/odrl/2/odrl.rdf ! ODRL 2.0 (RDF/XML)
+http://www.w3.org/ns/odrl/2/odrl.xsd ! ODRL 2.0 (XML Schema Definition)
+http://www.w3.org/ns/odrl/2/odrl.html ! ODRL 2.0 (HTML)
+http://www.w3.org/ns/odrl/2/actions ! ODRL Actions vocabulary
+http://www.w3.org/ns/odrl/2/Asset ! Asset
+http://www.w3.org/ns/odrl/2/Party ! Party
+http://www.w3.org/ns/odrl/2/Policy ! Policy
+http://www.w3.org/ns/odrl/2/ConflictTerm ! Conflict term
+http://www.w3.org/ns/odrl/2/UndefinedTerm ! Undefined values
+http://www.w3.org/ns/odrl/2/Rule ! Rule
+http://www.w3.org/ns/odrl/2/Permission ! Permission
+http://www.w3.org/ns/odrl/2/Prohibition ! Prohibition
+http://www.w3.org/ns/odrl/2/Duty ! Duty
+http://www.w3.org/ns/odrl/2/Action ! Action
+http://www.w3.org/ns/odrl/2/Constraint ! Constraint
+http://www.w3.org/ns/odrl/2/Operator ! Operator
+http://www.w3.org/ns/odrl/2/Agreement ! Agreement
+http://www.w3.org/ns/odrl/2/Offer ! Offer
+http://www.w3.org/ns/odrl/2/Privacy ! Privacy
+http://www.w3.org/ns/odrl/2/Request ! Request
+http://www.w3.org/ns/odrl/2/Set ! Set
+http://www.w3.org/ns/odrl/2/Ticket ! Ticket
+http://www.w3.org/ns/odrl/2/All ! All
+http://www.w3.org/ns/odrl/2/All2ndConnections ! All second-level connections
+http://www.w3.org/ns/odrl/2/AllConnections ! All connections
+http://www.w3.org/ns/odrl/2/AllGroups ! All groups
+http://www.w3.org/ns/odrl/2/Group ! Group
+http://www.w3.org/ns/odrl/2/Individual ! Individual
+http://www.w3.org/ns/odrl/2/perm ! Permissions
+http://www.w3.org/ns/odrl/2/prohibit ! Prohibit
+http://www.w3.org/ns/odrl/2/invalid ! Invalid
+http://www.w3.org/ns/odrl/2/ignore ! Ignore
+http://www.w3.org/ns/odrl/2/support ! Support
+http://www.w3.org/ns/odrl/2/eq ! Equal to
+http://www.w3.org/ns/odrl/2/gt ! Greater than
+http://www.w3.org/ns/odrl/2/gteq ! Greater than or equal to
+http://www.w3.org/ns/odrl/2/hasPart ! Has part
+http://www.w3.org/ns/odrl/2/isA ! Is a
+http://www.w3.org/ns/odrl/2/isAllOf ! Is all of
+http://www.w3.org/ns/odrl/2/isAnyOf ! Is any of
+http://www.w3.org/ns/odrl/2/isNoneOf ! Is none of
+http://www.w3.org/ns/odrl/2/isPartOf ! Is part of
+http://www.w3.org/ns/odrl/2/lt ! Less than
+http://www.w3.org/ns/odrl/2/lteq ! Less than or equal to
+http://www.w3.org/ns/odrl/2/neq ! Not equal to
+http://www.w3.org/ns/odrl/2/conflict ! conflict
+http://www.w3.org/ns/odrl/2/undefined ! undefined
+http://www.w3.org/ns/odrl/2/permission ! permission
+http://www.w3.org/ns/odrl/2/prohibition ! prohibition
+http://www.w3.org/ns/odrl/2/inheritAllowed ! inheritance allowed
+http://www.w3.org/ns/odrl/2/inheritFrom ! inherits from
+http://www.w3.org/ns/odrl/2/relation ! relation
+http://www.w3.org/ns/odrl/2/output ! output
+http://www.w3.org/ns/odrl/2/target ! target
+http://www.w3.org/ns/odrl/2/function ! function
+http://www.w3.org/ns/odrl/2/action ! action
+http://www.w3.org/ns/odrl/2/constraint ! constraint
+http://www.w3.org/ns/odrl/2/duty ! duty
+http://www.w3.org/ns/odrl/2/unit ! unit
+http://www.w3.org/ns/odrl/2/operator ! operator
+http://www.w3.org/ns/odrl/2/rightOperand ! right-operand
+http://www.w3.org/ns/odrl/2/status ! status
+http://www.w3.org/ns/odrl/2/absolutePosition ! absolute position
+http://www.w3.org/ns/odrl/2/absoluteSize ! absolute size
+http://www.w3.org/ns/odrl/2/count ! count
+http://www.w3.org/ns/odrl/2/dateTime ! date/time
+http://www.w3.org/ns/odrl/2/deliveryChannel ! delivery channel
+http://www.w3.org/ns/odrl/2/device ! device
+http://www.w3.org/ns/odrl/2/elapsedTime ! elapsed time
+http://www.w3.org/ns/odrl/2/event ! event
+http://www.w3.org/ns/odrl/2/fileFormat ! file format
+http://www.w3.org/ns/odrl/2/industry ! industry
+http://www.w3.org/ns/odrl/2/language ! language
+http://www.w3.org/ns/odrl/2/media ! media
+http://www.w3.org/ns/odrl/2/meteredTime ! metered time
+http://www.w3.org/ns/odrl/2/payAmount ! payment amount
+http://www.w3.org/ns/odrl/2/percentage ! percentage
+http://www.w3.org/ns/odrl/2/product ! product
+http://www.w3.org/ns/odrl/2/purpose ! purpose
+http://www.w3.org/ns/odrl/2/recipient ! recipient
+http://www.w3.org/ns/odrl/2/relativePosition ! relative position
+http://www.w3.org/ns/odrl/2/relativeSize ! relative size
+http://www.w3.org/ns/odrl/2/resolution ! resolution
+http://www.w3.org/ns/odrl/2/spatial ! spatial
+http://www.w3.org/ns/odrl/2/system ! system
+http://www.w3.org/ns/odrl/2/timeInterval ! time interval
+http://www.w3.org/ns/odrl/2/version ! version
+http://www.w3.org/ns/odrl/2/virtualLocation ! virtual location
+http://www.w3.org/ns/odrl/2/assignee ! assignee
+http://www.w3.org/ns/odrl/2/assigner ! assigner
+http://www.w3.org/ns/odrl/2/attributedParty ! attributed party
+http://www.w3.org/ns/odrl/2/consentingParty ! consenting party
+http://www.w3.org/ns/odrl/2/informedParty ! informed party
+http://www.w3.org/ns/odrl/2/payeeParty ! payee party
+http://www.w3.org/ns/odrl/2/trackingParty ! tracking party
+http://www.w3.org/ns/odrl/2/proximity ! proximity
+http://www.w3.org/ns/odrl/2/timedCount ! timed count
+http://www.w3.org/ns/odrl/2/acceptTracking ! Accept tracking
+http://www.w3.org/ns/odrl/2/aggregate ! Aggregate
+http://www.w3.org/ns/odrl/2/annotate ! Annotate
+http://www.w3.org/ns/odrl/2/anonymize ! Anonymize
+http://www.w3.org/ns/odrl/2/append ! Append
+http://www.w3.org/ns/odrl/2/archive ! Archive
+http://www.w3.org/ns/odrl/2/attribute ! Attribute
+http://www.w3.org/ns/odrl/2/concurrentUse ! Concurrent use
+http://www.w3.org/ns/odrl/2/copy ! Copy
+http://www.w3.org/ns/odrl/2/delete ! Delete
+http://www.w3.org/ns/odrl/2/derive ! Derive
+http://www.w3.org/ns/odrl/2/display ! Display
+http://www.w3.org/ns/odrl/2/distribute ! Distribute
+http://www.w3.org/ns/odrl/2/ensureExclusivity ! Ensure exclusivity
+http://www.w3.org/ns/odrl/2/execute ! Execute
+http://www.w3.org/ns/odrl/2/export ! Export
+http://www.w3.org/ns/odrl/2/extract ! Extract
+http://www.w3.org/ns/odrl/2/give ! Give
+http://www.w3.org/ns/odrl/2/include ! Include
+http://www.w3.org/ns/odrl/2/index ! Index
+http://www.w3.org/ns/odrl/2/inform ! Inform
+http://www.w3.org/ns/odrl/2/install ! Install
+http://www.w3.org/ns/odrl/2/lease ! Lease
+http://www.w3.org/ns/odrl/2/license ! License
+http://www.w3.org/ns/odrl/2/lend ! Lend
+http://www.w3.org/ns/odrl/2/modify ! Modify
+http://www.w3.org/ns/odrl/2/move ! Move
+http://www.w3.org/ns/odrl/2/nextPolicy ! Next policy
+http://www.w3.org/ns/odrl/2/obtainConsent ! Obtain consent
+http://www.w3.org/ns/odrl/2/pay ! Pay
+http://www.w3.org/ns/odrl/2/play ! Play
+http://www.w3.org/ns/odrl/2/present ! Present
+http://www.w3.org/ns/odrl/2/preview ! Preview
+http://www.w3.org/ns/odrl/2/print ! Print
+http://www.w3.org/ns/odrl/2/read ! Read
+http://www.w3.org/ns/odrl/2/reproduce ! Reproduce
+http://www.w3.org/ns/odrl/2/reviewPolicy ! Review policy
+http://www.w3.org/ns/odrl/2/secondaryUse ! Secondary use
+http://www.w3.org/ns/odrl/2/sell ! Sell
+http://www.w3.org/ns/odrl/2/textToSpeech ! Text-to-speech
+http://www.w3.org/ns/odrl/2/transform ! Transform
+http://www.w3.org/ns/odrl/2/translate ! Translate
+http://www.w3.org/ns/odrl/2/uninstall ! Uninstall
+http://www.w3.org/ns/odrl/2/watermark ! Watermark
+http://www.w3.org/ns/odrl/2/write ! Write
+http://www.w3.org/ns/odrl/2/adHocShare ! Ad-hoc sharing
+http://www.w3.org/ns/odrl/2/extractChar ! Extract character
+http://www.w3.org/ns/odrl/2/extractPage ! Extract page
+http://www.w3.org/ns/odrl/2/extractWord ! Extract word
+http://www.w3.org/ns/odrl/2/attachPolicy ! Attach policy
+http://www.w3.org/ns/odrl/2/attachSource ! Attach source
+http://www.w3.org/ns/odrl/2/shareAlike ! Share-alike
+http://www.w3.org/ns/odrl/2/commercialize ! Commercialize
+http://www.w3.org/ns/odrl/2/share ! Share

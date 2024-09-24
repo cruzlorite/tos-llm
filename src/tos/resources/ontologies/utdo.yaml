@@ -1,0 +1,148 @@
+id: http://w3id.org/ontology/utdo
+name: utdo
+title: Simple ODRL Extraction Template
+description: >-
+  Simple ODRL Extraction Template
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  odrl: http://www.w3.org/ns/odrl/2/
+  linkml: https://w3id.org/linkml/
+  utdo: http://w3id.org/ontology/utdo
+
+default_prefix: utdo
+default_range: string
+
+imports:
+  - linkml:types
+
+enums:
+  PartyType:
+    description: "The role of the party in a policy"
+    permissible_values:
+      PROVIDER:
+        description: "The provider of a service."
+      CONSUMER:
+        description: "The consumer of a service."
+
+  DeonticModality:
+    description: "The type of rule"
+    permissible_values:
+      DUTY:
+        description: "A duty"
+      PERMISSION:
+        description: "A permission"
+      PROHIBITION:
+        description: "A prohibition"
+
+  ActionType:
+    description: "The type of action"
+    permissible_values:
+      DELETE:
+        description: "The action of deleting something"
+      MODIFY:
+        description: "The action of modifying something"
+      TERMINATE:
+        description: "The action of terminating something"
+      CONSENT:
+        description: "The action of giving consent"
+
+  AssetType:
+    description: "The type of asset"
+    permissible_values:
+      USER_CONTENT:
+        description: "User content, for example personal data, a photo, a video, etc."
+      SERVICE:
+        description: "A service, access to a service or similar, for example a subscription, a license, etc."
+      CONTRACT:
+        description: "The contract itself"
+
+  ConstrainType:
+    description: "The type of constraint applied to a rule"
+    permissible_values:
+      UNILATERALLY:
+        description: "If the action can be taken unilaterally by the assignee"
+      NO_PRIOR_NOTICE_REQUIRED:
+        description: "If prior notice is not required before the action is taken"
+      NO_CONSENT_REQUIRED:
+        description: "If consent is not required the other party before the action is taken"
+
+classes:
+  NamedEntity:
+    description: "A named entity"
+    attributes:
+      id:
+        range: integer
+        identifier: true
+        required: true
+        description: The unique identifier of the entity
+      name:
+        range: string
+        required: true
+        description: The name of the entity
+
+  Party:
+    is_a: NamedEntity
+    description: A party that can be assigned a role in a policy
+    close_mappings: odrl:Party
+    attributes:
+      type:
+        range: PartyType
+        required: true
+        description: The type, a PROVIDER or CONSUMER
+
+  Policy:
+    description: A group of one or more Rules
+    close_mappings: odrl:Policy
+    attributes:
+      rules:
+        range: Rule
+        required: true
+        multivalued: true
+        description: The rules that make up the policy
+
+  Rule:
+    abstract: true
+    description: An abstract concept that represents the common characteristics of Permissions, Prohibitions, and Duties.
+    close_mappings: odrl:Rule
+    attributes:
+      modality:
+        range: DeonticModality
+        required: true
+        description: "The type of rule: DUTY, PERMISSION, or PROHIBITION"
+      action:
+        range: Action
+        required: true
+        description: The action that are being regulated
+      constrains:
+        range: ConstrainType
+        multivalued: true
+        required: false
+        description: List of constraints that apply to the rule
+      assignee:
+        range: Party
+        required: true
+        description: The party to whom the rule applies
+
+  Action:
+    description: An action that can be taken
+    close_mappings: odrl:Action
+    attributes:
+      type:
+        range: ActionType
+        required: true
+        description: "The type of action: delete, modify, distribute, etc."
+      target:
+        range: Asset
+        required: true
+        description: The asset that the action is being taken on
+
+  Asset:
+    is_a: NamedEntity
+    description: An asset upon which an action can be taken. For example, your personal data, access to a service, the contract itself or similar.
+    close_mappings: odrl:Asset
+    attributes:
+      type:
+        range: AssetType
+        required: true
+        description: The type of asset

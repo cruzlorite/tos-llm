@@ -1,18 +1,21 @@
-id: unfair_terms_ontology
-name: unfair_terms_ontology
+id: https://w3id.org/linkml/tos
+name: tos
 description: "Ontology to represent Online Terms of Service"
 prefixes:
+  tos: https://w3id.org/linkml/tos/
   linkml: https://w3id.org/linkml/
-  odlr: http://www.w3.org/ns/odrl/2/
+  odrl: https://www.w3.org/ns/odrl/2/.
 imports:
   - linkml:types
 
-classes:
+default_range: string
+default_prefix: tos
 
-  MyAction:
-    is_a: odlr:Rule
-    attributes:
-      Text:
-        range: string
-        required: false
-        description: A description of the action.
+classes:
+  Action:
+    tree_root: true
+    description: "The provider of a service."
+    id_prefixes:
+      - ODRL
+    annotations:
+      annotators: llm:,
