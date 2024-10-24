@@ -1,4 +1,16 @@
-# Terms of Service Unfair Clauses Detection using Prompt Engineering
+# ToS LLM
+
+This repository contains...
+
+## Context
+
+## Structure
+
+## Install
+
+## Prompts
+
+## HTML preprocessing
 
 ## Ontologies and Knowledge Graphs
 
@@ -55,149 +67,3 @@
 |---------------|
 | Can the provider terminate the contract unilaterally? If so, does it specify specific causes, or termination is allowed without justified cause? |
 | Is the provider required to give notice before terminating the contract? |
-
-### DL
-
-
-TBox
-Nc = {Party, Action, Modify, Remove, Consent, Terminate, Litigation, Target, Service, UserContent, Contract, Condition, Unilaterally, WithoutReasonRequired, WithoutPriorNoticeRequired, WithoutConsentRequired, RequiresArbitration, WithForeignLaw, InForeignJurisdiction, Consumer, Provider, LimitationOfLiability, HarmCausedByMalware, HealthIssues, GrossNegligence}
-Nr = {hasRightTo, isObligatedTo, isProhibitedTo, onTarget, hasCondition, hasLimitationOfLiabilityFor}
-No = {}
-
-ARBITRAJE = consumer .isProhibitedTo Litigate hasCondition WithoutPriorAr
-
-Consumer < Party
-Provider < Party
-Modify < Action
-Remove < Action
-Terminate < Action
-Consent < Action
-Unilaterally < Condition
-WithoutPriorNoticeRequired < Condition
-WithoutConsentRequired < Condition
-Service < Target
-UserContent < Target
-Contract < Target
-
-CONTENT_REMOVAL_UNFAIR_TERM = para todo Provider .hasRightTo(Remove intersecction UserContent intersecction (Unilaterally or WithoutPriorNoticeRequired or WithoutConsentRequired))
-Consumer 
-
-Abox
-Party(Github)
-
-
-[Party]->[Consumer]
-[Party]->[Provider]
-
-[Action]->[Modify]
-[Action]->[Remove]
-[Action]->[Terminate]
-[Action]->[Consent]
-
-[Target]->[UserContent]
-[Target]->[Contract]
-[Target]->[Service]
-
-[Condition]->[Unilaterally]
-[Condition]->[WithoutReasonRequired]
-[Condition]->[WithoutPriorNoticeRequired]
-[Condition]->[WithoutConsentRequired]
-[Condition]->[RequiresArbitration]
-[Condition]->[WithForeignLaw]
-[Condition]->[InForeignJurisdiction]
-
-[LimitationOfLiability]->[HarmCausedByMalware]
-[LimitationOfLiability]->[HealthIssues]
-[LimitationOfLiability]->[GrossNegligence]
-
-### Unfair Terms Ontology
-
-| Entity              | Subclass of  | Description |
-|---------------------|--------------|-------------|
-| Agent               | NamedEntity  |             |
-| Provider            | Agent        |             |
-| Consumer            | Agent        |             |
-| Both                | Agent        |             |
-| DeonticModal        | NamedEntity  |             |
-| Obligatory          | DeonticModal |             |
-| Permissible         | DeonticModal |             |
-| Forbidden           | DeonticModal |             |
-| Action              | NamedEntity  |             |
-| RemoveUserContent   | Action       |             |
-| TerminateContract   | Action       |             |
-| ModifyContract      | Action       |             |
-| ConsentContract     | Action       |             |
-| Litigate            | Action       |             |
-| Arbitration         | NamedEntity  |             |
-| GoverningLaw        | NamedEntity  |             |
-| Jurisdiction        | NamedEntity  |             |
-| LiabilityLimitation | NamedEntity  |             |
-
-Taxonomy representation:
-
-```mermaid
-flowchart LR
-    NamedEntity --> Agent
-    NamedEntity --> DeonticModal
-    NamedEntity --> Action
-    NamedEntity --> Arbitration
-    NamedEntity --> GoverningLaw
-    NamedEntity --> Jurisdiction
-    NamedEntity --> LiabilityLimitation
-    DeonticModal --> Obligatory
-    DeonticModal --> Premmisible
-    DeonticModal --> Forbidden
-    Agent --> Provider
-    Agent --> Consumer
-    Agent --> Both
-    Action --> RemoveUserContent
-    Action --> TerminateContract
-    Action --> ModifyContract
-    Action --> ConsentContract
-    Action --> Litigate
-```
-
-# Entities:
-## Parties
-- Provider
-- Consumer
-
-## deontic classification
-- Obligation
-
-## clause type
-- Arbitration
-- GoverningLaw
-- Jurisdiction
-- ContentRemoval
-- LimitationOfLiability
-- Modification
-- Termination
-
-
-## Relations
-- 
-
-
-
-
-
-
-
-
-
-
-Idea de paper:
-
-1. Contruir una ontología para representar cláusulas abusivas.
-    1.1. Generar CQ limitar el scope de la ontología
-2. Representar la ontología como un conjunto de clases Pydantic.
-3. Utilizar varios LLMs (CHatgpt4omini, Chatgpt4o, Mistral, Llama) para generar un KG a partir de la ontología.
-4. Detectar potentially unfair terms usando el KG.
-5. Validar el resultado comparando contra CLAUDETTE.
-6. Plantear posibles aplicaciones de la generación de KG en TOS.
-    6.1. Obligaciones y derechos.
-
-Abstract:
-Introducción:
-Related Work:
