@@ -56,6 +56,60 @@
 | Can the provider terminate the contract unilaterally? If so, does it specify specific causes, or termination is allowed without justified cause? |
 | Is the provider required to give notice before terminating the contract? |
 
+### DL
+
+
+TBox
+Nc = {Party, Action, Modify, Remove, Consent, Terminate, Litigation, Target, Service, UserContent, Contract, Condition, Unilaterally, WithoutReasonRequired, WithoutPriorNoticeRequired, WithoutConsentRequired, RequiresArbitration, WithForeignLaw, InForeignJurisdiction, Consumer, Provider, LimitationOfLiability, HarmCausedByMalware, HealthIssues, GrossNegligence}
+Nr = {hasRightTo, isObligatedTo, isProhibitedTo, onTarget, hasCondition, hasLimitationOfLiabilityFor}
+No = {}
+
+ARBITRAJE = consumer .isProhibitedTo Litigate hasCondition WithoutPriorAr
+
+Consumer < Party
+Provider < Party
+Modify < Action
+Remove < Action
+Terminate < Action
+Consent < Action
+Unilaterally < Condition
+WithoutPriorNoticeRequired < Condition
+WithoutConsentRequired < Condition
+Service < Target
+UserContent < Target
+Contract < Target
+
+CONTENT_REMOVAL_UNFAIR_TERM = para todo Provider .hasRightTo(Remove intersecction UserContent intersecction (Unilaterally or WithoutPriorNoticeRequired or WithoutConsentRequired))
+Consumer 
+
+Abox
+Party(Github)
+
+
+[Party]->[Consumer]
+[Party]->[Provider]
+
+[Action]->[Modify]
+[Action]->[Remove]
+[Action]->[Terminate]
+[Action]->[Consent]
+
+[Target]->[UserContent]
+[Target]->[Contract]
+[Target]->[Service]
+
+[Condition]->[Unilaterally]
+[Condition]->[WithoutReasonRequired]
+[Condition]->[WithoutPriorNoticeRequired]
+[Condition]->[WithoutConsentRequired]
+[Condition]->[RequiresArbitration]
+[Condition]->[WithForeignLaw]
+[Condition]->[InForeignJurisdiction]
+
+[LimitationOfLiability]->[HarmCausedByMalware]
+[LimitationOfLiability]->[HealthIssues]
+[LimitationOfLiability]->[GrossNegligence]
+
 ### Unfair Terms Ontology
 
 | Entity              | Subclass of  | Description |
