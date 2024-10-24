@@ -9,9 +9,9 @@ This repository contains...
 ## Install
 
 ```shell
-$ pip uninstall tos -y
-$ python3 -m build
-$ pip install ./dist/tos-0.0.1-py3-none-any.whl
+pip uninstall tos -y
+python3 -m build
+pip install ./dist/tos-0.0.1-py3-none-any.whl
 ```
 
 ## Prompts
