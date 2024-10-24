@@ -23,7 +23,7 @@ from tos.scraping.utils import xpath_for_bs4
 class TextElementsExtractor:
     """Extract all text elements from a HTML page."""
     
-    DECOMPOSABLE_ELEMENTS = [
+    DECOMPOSE_ELEMENTS = [
         'iframe', 'script', 'style', 'svg', 'input', 'select', 'textarea', 'noscript']
     
     BREAKING_ELEMENTS = [
@@ -70,7 +70,7 @@ class TextElementsExtractor:
         soup = BeautifulSoup(unescape(html), "html.parser")
         
         for element in soup.find_all():
-            if element.name in self.DECOMPOSABLE_ELEMENTS:
+            if element.name in self.DECOMPOSE_ELEMENTS:
                 element.decompose()
         
         elements = []
