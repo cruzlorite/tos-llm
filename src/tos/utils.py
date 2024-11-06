@@ -16,6 +16,8 @@
 
 from importlib import resources as impresources
 
+from typing import List
+
 
 def print_disclaimer():
     print("ToS Copyright (C) 2024 José María Cruz Lorite")
@@ -24,7 +26,7 @@ def print_disclaimer():
     print("under certain conditions. See the GNU GPLv3 for details.")
     print("")
 
-def read_resource_file(package, filename):
+def read_resource_file(package: str, filename: str) -> str:
     """Read resource file embedded in the package.
     
     Args:
@@ -35,10 +37,22 @@ def read_resource_file(package, filename):
     """
     return impresources.read_text(package, filename)
 
-def load_prompt_from_resource(prompt_name):
+def load_dataset_tos30() -> List[str]:
+    """Load the ToS30 dataset.
+    
+    The dataset contains 30 annotated Terms of Service URLs. It can be found
+    in the package tos.resources.datasets.
+    
+    Returns:
+        List[str]: The list of URLs conforming the tos30 dataset.
+    """
+    content = read_resource_file("tos.resources.datasets", "tos30.txt")
+    return [url.strip() for url in content.split("\n")]
+
+def load_prompt_template(prompt_name: str) -> str:
     """Load the prompt from the resource file.
     
     Args:
         prompt_name (str): The prompt filename without the extension.
     """
-    template = read_resource_file("tos.resources.prompts", f"{prompt_name}.txt")
+    return read_resource_file("tos.resources.prompts", f"{prompt_name}.txt")

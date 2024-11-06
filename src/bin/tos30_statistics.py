@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # ToS: A tool to analyze Terms of Service.
 # Copyright (C) 2024 José María Cruz Lorite
 #
@@ -14,18 +15,25 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from datasets import load_dataset
-from sentence_transformers.losses import CosineSimilarityLoss
-
-from setfit import SetFitModel, SetFitTrainer
+from tos.utils import load_dataset_tos30
+from tos.readers import TosHierarchicalReader
 
 
-
-class TosContentExtractorBuilder:
-    """Builder for the ToS content extractor model."""
+def read_tos(url: str):
+    """Read the Terms of Service from the URL.
     
-    def __init__(self, model_name="bert-base-uncased"):
-        self.model_name = model_name
-        
-        # load the dataset
-        self.dataset = load_dataset("tos")
+    Args:
+        url (str): The URL to read.
+    """
+    reader = TosHierarchicalReader()
+    return reader.read(url)
+    
+    
+if __name__ == "__main__":
+    # get list of URLs
+    urls = load_dataset_tos30()
+    
+    
+    
+    
+    print(urls)

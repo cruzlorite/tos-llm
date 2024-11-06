@@ -31,7 +31,7 @@ class HtmlTermsScraper:
         driver (WebDriver): The Selenium WebDriver.
     """
     
-    def __init__(self, wait_time=3, headless=True):
+    def __init__(self, wait_time: int = 3, headless: bool = True):
         self.wait_time = wait_time
         self.headless = headless
         self.driver = None
@@ -42,10 +42,11 @@ class HtmlTermsScraper:
         self.driver = webdriver.Firefox(options=options)
         self.driver.implicitly_wait(self.wait_time)
     
-    def get(self, url):
+    def get(self, url: str):
         self.driver.get(url)
     
-    def get_page_source(self):
+    def get_page_source(self, url: str):
+        self.get(url)
         return self.driver.page_source
     
     def select_element(self, xpath, class_name="__tos_selected__"):
